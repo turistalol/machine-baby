@@ -7,7 +7,6 @@ import {
   Puzzle,
   Instagram,
   Facebook,
-  Youtube,
   MessageCircle,
   ChevronRight,
   Star
@@ -15,16 +14,35 @@ import {
 
 function App() {
   const links = [
-    { title: 'Roupas', icon: <Shirt />, description: 'Coleção Primavera/Verão' },
-    { title: 'Móveis', icon: <Sofa />, description: 'Decoração e Conforto' },
-    { title: 'Enxoval', icon: <Sparkles />, description: 'Itens Essenciais' },
-    { title: 'Brinquedos', icon: <Puzzle />, description: 'Diversão e Aprendizado' },
+    { 
+      title: 'Roupas', 
+      icon: <Shirt />, 
+      description: 'Coleção Primavera/Verão',
+      url: 'https://wa.me/553798048372'
+    },
+    { 
+      title: 'Móveis', 
+      icon: <Sofa />, 
+      description: 'Decoração e Conforto',
+      url: 'https://wa.me/553798456914'
+    },
+    { 
+      title: 'Enxoval', 
+      icon: <Sparkles />, 
+      description: 'Itens Essenciais',
+      url: 'https://wa.me/553798048372'
+    },
+    { 
+      title: 'Brinquedos', 
+      icon: <Puzzle />, 
+      description: 'Diversão e Aprendizado',
+      url: 'https://wa.me/553798048372'
+    },
   ];
 
   const socialLinks = [
-    { icon: <Instagram size={24} />, url: '#', label: 'Instagram' },
-    { icon: <Facebook size={24} />, url: '#', label: 'Facebook' },
-    { icon: <Youtube size={24} />, url: '#', label: 'Youtube' },
+    { icon: <Instagram size={24} />, url: 'https://www.instagram.com/lojamachinebaby', label: 'Instagram' },
+    { icon: <Facebook size={24} />, url: 'https://www.facebook.com/p/Machine-Baby-100052590804873', label: 'Facebook' },
   ];
 
   return (
@@ -34,14 +52,14 @@ function App() {
         <div className="flex flex-col items-center mb-12">
           <div className="w-32 h-32 rounded-full overflow-hidden mb-6 ring-4 ring-white shadow-lg">
             <img
-              src="https://images.unsplash.com/photo-1555252333-9f8e92e65df9?auto=format&fit=crop&w=300"
-              alt="Baby Store"
+              src="mb-logo.png"
+              alt="Machine Baby"
               className="w-full h-full object-cover"
             />
           </div>
           <div className="flex items-center gap-2 mb-2">
             <Baby className="text-pink-400" />
-            <h1 className="text-2xl font-semibold text-gray-800">Baby Dreams</h1>
+            <h1 className="text-2xl font-semibold text-gray-800">Machine Baby</h1>
           </div>
           <p className="text-gray-600 text-center">Produtos especiais para momentos únicos</p>
         </div>
@@ -59,7 +77,9 @@ function App() {
           {links.map((link) => (
             <a
               key={link.title}
-              href="#"
+              href={link.url}
+              target="_blank"
+              rel="noopener noreferrer"
               className="block bg-white rounded-xl p-4 shadow-sm hover:shadow-md transition-all duration-300 transform hover:-translate-y-1"
             >
               <div className="flex items-center">
@@ -82,6 +102,8 @@ function App() {
             <a
               key={social.label}
               href={social.url}
+              target="_blank"
+              rel="noopener noreferrer"
               className="w-10 h-10 flex items-center justify-center rounded-full bg-white shadow-sm hover:shadow-md transition-all duration-300 text-gray-600 hover:text-pink-500"
               aria-label={social.label}
             >
@@ -93,7 +115,9 @@ function App() {
         {/* WhatsApp Button */}
         <div className="fixed bottom-8 right-8">
           <a
-            href="#"
+            href="https://wa.me/553798048372"
+            target="_blank"
+            rel="noopener noreferrer"
             className="flex items-center gap-2 bg-green-500 text-white px-6 py-3 rounded-xl shadow-lg hover:bg-green-600 transition-colors duration-300"
           >
             <MessageCircle className="w-5 h-5" />

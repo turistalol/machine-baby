@@ -1,0 +1,22 @@
+version: '3'
+
+services:
+  machinebaby:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: machinebaby
+    restart: unless-stopped
+    networks:
+      - web
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.machinebaby.rule=Host(`machinebaby.f5.marketing`)"
+      - "traefik.http.routers.machinebaby.entrypoints=websecure"
+      - "traefik.http.routers.machinebaby.tls=true"
+      - "traefik.http.routers.machinebaby.tls.certresolver=cloudflare"
+      - "traefik.http.services.machinebaby.loadbalancer.server.port=80"
+
+networks:
+  web:
+    external: true 
